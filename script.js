@@ -1,4 +1,3 @@
-//your code here
 var randomNum;
 var input;
 function randomNumGenerator(){
