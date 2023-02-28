@@ -1,22 +1,15 @@
-var btn = document.getElementById("btn");
-var num = document.getElementById("num");
-var res=  document.getElementById("respond");
-var guess= document.getElementById("guess").value;
-function randomNumGenerator() {
-  randomNum = Math.floor(Math.random() * 41) - 20;
-  document.getElementById("num").innerText = randomNum;
-  guessNum();
-  print();
-}
+const userGuess = document.getElementById('guess');
+const btn = document.getElementById('btn');
+const displayNum = document.getElementById('num');
+const hotOrCold = document.getElementById('respond');
 
-function guessNum() {
-  guess = Number(document.getElementById("guess").value);
-}
-function print() {
-  if (Math.abs(randomNum - guess) <= 5) {
-    document.getElementById("respond").innerText = "Hot";
-  } else {
-    document.getElementById("respond").innerHTML = "Cold";
-  }
-}
-btn.addEventListener("click",randomNumGenerator);
+btn.addEventListener('click', ()=>{
+    let random = Math.floor((Math.random()*21));
+    let userNum = Number(userGuess.value);
+    displayNum.innerText = random;
+    if(random <= 20 && random >= -20){
+        hotOrCold.innerText = 'Hot';
+    }else{
+        hotOrCold.innerText = 'Cold';
+    }
+})
